@@ -10,10 +10,17 @@ import UIKit
 
 class WeatherViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cityName: UITextField!
+    var weatherManager: WeatherManager!;
     
+    @IBAction func setCityPressed(_ sender: UIButton) {
+        if let city = cityName.text {
+            weatherManager.setCity(city: city);
+            dismiss(animated: true, completion: nil);
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad();
-        // Code goes here
+        weatherManager = WeatherManager();
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

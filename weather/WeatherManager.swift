@@ -18,13 +18,23 @@ class WeatherManager {
             self.city = city;
             setCurrentWeather();
         }
-        makeCallToGetWeather(city: "San Francisco")
+//        makeCallToGetWeather(city: "San Francisco")
     }
     
     public func setCity(city c: String) {
         city = c;
         UserDefaults.standard.set(c, forKey: "city");
-        makeCallToGetWeather(city: c);
+    }
+    
+    public func getCity() -> (String?) {
+        return city;
+    }
+    
+    public func updateThis() {
+        if let city = UserDefaults.standard.object(forKey: "city") as? String {
+            self.city = city;
+            setCurrentWeather();
+        }
     }
     
     private func setCurrentWeather() {
@@ -62,6 +72,7 @@ class WeatherManager {
         let endOfPhrase = parsedData.firstIndex(of: "<")!;
         parsedData = parsedData[parsedData.startIndex...parsedData.index(before: endOfPhrase)];
         self.currentWeather = String(parsedData);
+        print(currentWeather ?? "No weather");
     }
     
     public func getWeather() -> (String?) {

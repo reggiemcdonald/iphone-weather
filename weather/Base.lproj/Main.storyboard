@@ -35,7 +35,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="FP6-LS-sYs" kind="show" id="OTw-Ja-dNx"/>
+                                    <segue destination="FP6-LS-sYs" kind="presentation" id="OTw-Ja-dNx"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Weather Information Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14X-gg-qpy">
@@ -110,8 +110,8 @@
                                     <outlet property="delegate" destination="FP6-LS-sYs" id="fxf-lr-Wi1"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-Kk-atF">
-                                <rect key="frame" x="112.5" y="223" width="189" height="48"/>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-Kk-atF">
+                                <rect key="frame" x="113" y="223" width="189" height="48"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -123,10 +123,14 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="setCityPressed:" destination="FP6-LS-sYs" eventType="touchUpInside" id="5i5-LO-qTG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="MPr-Kk-atF" firstAttribute="top" secondItem="Rj3-gT-85j" secondAttribute="bottom" constant="25" id="0Gg-Bv-tkm"/>
                             <constraint firstItem="Rj3-gT-85j" firstAttribute="centerX" secondItem="n8I-G9-P7S" secondAttribute="centerX" id="7AY-Ir-kVe"/>
                             <constraint firstItem="fhw-rN-URl" firstAttribute="centerX" secondItem="n8I-G9-P7S" secondAttribute="centerX" id="AA0-pw-0jM"/>
                             <constraint firstItem="gpi-NJ-ydX" firstAttribute="leading" secondItem="eAQ-TG-DWy" secondAttribute="leading" id="Myd-cm-3Qa"/>

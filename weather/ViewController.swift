@@ -14,21 +14,23 @@ class ViewController: UIViewController, Observer {
     
     @IBOutlet weak var backgroundImg: UIImageView!
     var weatherManager: WeatherManager!;
+    var city: String?;
     @IBOutlet weak var weatherMessage: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad();
         weatherManager = WeatherManager();
         weatherManager.attachObserver(observer: self);
+        if let currentCity = weatherManager.getCity() {
+            city = currentCity;
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // DO stuff
+        print("Here");
+        weatherManager.updateThis();
+        print("done");
         
-    }
-    
-    public func update(weather: String) {
-        weatherMessage.text = weather;
     }
     
     func update() {
